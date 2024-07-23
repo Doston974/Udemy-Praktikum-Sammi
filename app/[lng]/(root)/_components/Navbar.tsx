@@ -13,9 +13,13 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs'
 import UserBox from '@/components/shared/user-box'
 import useTranslate from '@/hooks/use-translate'
 import Mobile from './mobile'
+import { useParams, usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 
 const Navbar = () => {
     const t = useTranslate()
+    const pathname = usePathname()
+    const { lng } = useParams()
 
     return (
         <div className='fixed inset-0 z-40 h-20 bg-background/70 backdrop-blur-xl'>
@@ -27,7 +31,10 @@ const Navbar = () => {
                             <Link
                                 href={`/${nav.route}`}
                                 key={nav.route}
-                                className='font-medium hover:text-blue-500 hover:underline transition-all'
+                                className={cn(
+                                    'font-medium hover:text-blue-500 hover:underline transition-all',
+                                    pathname === `/${lng}/${nav.route}` && "text-blue-500"
+                                )}
                             >
                                 {t(nav.name)}
                             </Link>

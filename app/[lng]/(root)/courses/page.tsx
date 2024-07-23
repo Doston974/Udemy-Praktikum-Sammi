@@ -1,8 +1,13 @@
+import TopBar from '@/components/shared/top-bar'
 import React from 'react'
+import AllCourses from './_components/AllCourses'
 
 const Page = () => {
   return (
-    <div className='mt-24 text-2xl'>Page</div>
+    <>
+      <TopBar label={'allCourses'} description={'allCourseDescription'} />
+      <AllCourses />
+    </>
   )
 }
 
