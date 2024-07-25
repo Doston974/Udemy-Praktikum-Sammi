@@ -1,5 +1,5 @@
-import { useTranslation } from "@/i18n/client";
-import { useParams } from "next/navigation";
+import { useTranslation } from '@/i18n/client'
+import { useParams } from 'next/navigation'
 
 function useTranslate() {
     const { lng } = useParams()
