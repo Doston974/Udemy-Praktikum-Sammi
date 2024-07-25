@@ -9,7 +9,7 @@ export const contactSchema = z.object({
 export const courseSchema = z.object({
     title: z.string().min(3),
     description: z.string().min(10),
-    learning: z.string(),
+    studentWillLearn: z.string(),
     requirements: z.string(),
     level: z.string(),
     language: z.string(),
